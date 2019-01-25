@@ -22,9 +22,15 @@ public class HelloController {
     	return "Greeting from Spring Boot";
     }
 
+    @RequestMapping("/greeting/{name}")
+    String helloByName(@PathVariable String name) {
+      return "HelloByName() " + name;
+    }
+
+    // GET
     @GetMapping("/greeting/{name}")
     String greetingByName(@PathVariable String name) {
-      return "Hello " + name + ", greeting from Spring Boot";
+      return "greetingByName() " + name + ", greeting from Spring Boot";
     }
 
     // 範例, 回傳JSON
