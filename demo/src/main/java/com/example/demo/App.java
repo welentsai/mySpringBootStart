@@ -43,6 +43,7 @@ public class App implements CommandLineRunner {
 		System.out.println(this.cityDao.selectCityById(1));
 		System.out.println(this.cityDao.selectCityById(2));
 		System.out.println(this.cityDao.selectCityById(5)); // not found !!, return null
+		System.out.println(this.cityDao.findByState("TPE"));
 	}
 
 }

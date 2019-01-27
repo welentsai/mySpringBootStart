@@ -19,4 +19,8 @@ public class CityDao {
 		return this.sqlSession.selectOne("selectCityById", id);
 	}
 
+	public City findByState(String state) {
+		return this.sqlSession.selectOne("findByState", state);
+	}
+
 }
