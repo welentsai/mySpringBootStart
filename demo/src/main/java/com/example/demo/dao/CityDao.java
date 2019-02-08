@@ -1,5 +1,8 @@
 package com.example.demo.dao;
 
+// import java.sql.ResultSet;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import com.example.demo.model.City;
 
@@ -21,6 +24,10 @@ public class CityDao {
 
 	public City findByState(String state) {
 		return this.sqlSession.selectOne("findByState", state);
+	}
+
+	public List<City> findAllCities() {
+		return this.sqlSession.selectList("findAllCities");
 	}
 
 }

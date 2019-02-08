@@ -2,6 +2,8 @@ package com.example.demo;
 
 // import com.example.demo.mapper.CityMapper;
 // import com.example.demo.dao.CityDao;
+
+import com.example.demo.model.City;
 import com.example.demo.service.CityService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +65,9 @@ public class App implements CommandLineRunner {
 
 		System.out.println(getCityService().selectCityById(2L));
 		System.out.println(getCityService().selectCityById(1L));
+		for(City city : getCityService().findAllCities()) {
+			System.out.println(city);
+		}
 	}
 
 }

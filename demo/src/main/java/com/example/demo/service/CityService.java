@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.List;
 
 import com.example.demo.dao.CityDao;
 import com.example.demo.model.City;
@@ -29,5 +30,9 @@ public class CityService {
 
 	public City selectCityById(Long id) {
     	return getCityDao().selectCityById(id);
+	}
+
+	public List<City> findAllCities() {
+		return getCityDao().findAllCities();
 	}
 }
