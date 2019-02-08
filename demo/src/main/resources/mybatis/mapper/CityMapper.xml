@@ -5,10 +5,13 @@
     <select id="selectCityById" resultType="City">
         SELECT * FROM city WHERE id = #{id}
     </select>
+    <select id="findByState" resultType="City">
+        SELECT * FROM city WHERE state = #{state}
+    </select>
     <select id="findAllCities" resultType="City">
     	SELECT * FROM city
     </select>
-    <select id="findByState" resultType="City">
-        SELECT * FROM city WHERE state = #{state}
+    <select id="selectNames" resultType="map">
+    	SELECT id, name FROM city
     </select>
 </mapper>

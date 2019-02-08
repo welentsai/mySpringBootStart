@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 import com.example.demo.dao.CityDao;
 import com.example.demo.model.City;
@@ -34,5 +36,23 @@ public class CityService {
 
 	public List<City> findAllCities() {
 		return getCityDao().findAllCities();
+	}
+
+	public Map<Long, String> selectNames() {
+		Map<Long, String> baseMap = new HashMap<Long, String>();
+		List<Map<Long, String>> baseList = getCityDao().selectNames();
+		for(Map<Long, String> map: baseList) {
+			Long id = null;
+			String name = null;
+			for(Map.Entry<Long, String>  entry:map.entrySet()) {
+				if ("NAME".equals(entry.getKey())) {  
+                	name = (String) entry.getValue();  
+            	} else if ("ID".equals(entry.getKey())) {
+            		id = Long.parseLong(String.valueOf(entry.getValue()));
+	            }
+			}
+			baseMap.put(id, name);
+		}
+		return baseMap;
 	}
 }

@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 // import java.sql.ResultSet;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import com.example.demo.model.City;
@@ -30,4 +31,7 @@ public class CityDao {
 		return this.sqlSession.selectList("findAllCities");
 	}
 
+	public List<Map<Long, String>> selectNames() {
+		return this.sqlSession.selectList("selectNames");
+	}
 }

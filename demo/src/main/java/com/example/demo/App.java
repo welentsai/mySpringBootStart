@@ -3,6 +3,8 @@ package com.example.demo;
 // import com.example.demo.mapper.CityMapper;
 // import com.example.demo.dao.CityDao;
 
+import java.util.Map;
+
 import com.example.demo.model.City;
 import com.example.demo.service.CityService;
 
@@ -67,6 +69,10 @@ public class App implements CommandLineRunner {
 		System.out.println(getCityService().selectCityById(1L));
 		for(City city : getCityService().findAllCities()) {
 			System.out.println(city);
+		}
+
+		for(Map.Entry<Long, String>  entry:getCityService().selectNames().entrySet()) {
+			System.out.println("key is : " + entry.getKey() + ", Value is : " + entry.getValue());
 		}
 	}
 
