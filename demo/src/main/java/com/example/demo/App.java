@@ -7,8 +7,10 @@ import java.util.Map;
 
 import com.example.demo.model.City;
 import com.example.demo.model.Hotel;
+import com.example.demo.model.CityHotel;
 import com.example.demo.service.CityService;
 import com.example.demo.service.HotelService;
+import com.example.demo.service.CityHotelService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -33,7 +35,10 @@ public class App implements CommandLineRunner {
   	private CityService cityService;
 
 	@Autowired
-  	private HotelService hotelService;  	
+  	private HotelService hotelService;  
+
+  	@Autowired
+  	private CityHotelService cityHotelService;	
 
 	// private final CityMapper cityMapper; //使用 Mapper
 	// private final CityDao cityDao; // 使用sqlSession, DAO
@@ -67,6 +72,13 @@ public class App implements CommandLineRunner {
 	    return hotelService;
   	}
 
+  	CityHotelService getCityHotelService() {
+  		if (cityHotelService == null) {
+	      throw new RuntimeException("cityHotelService not configured. Cannot continue.");
+	    }
+	    return cityHotelService;	
+  	}
+
 	@Override
 	@SuppressWarnings("squid:S106")
 	public void run(String... args) {
@@ -88,6 +100,8 @@ public class App implements CommandLineRunner {
 		}
 
 		System.out.println(getHotelService().selectHotelById(3));
+
+		System.out.println(getCityHotelService().selectHotelsByCityId(2l));
 	}
 
 }
