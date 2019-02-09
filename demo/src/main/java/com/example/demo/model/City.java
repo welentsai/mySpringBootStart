@@ -2,7 +2,7 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 
-
+/* City POJO */
 public class City implements Serializable {
 
 	private static final long serialVersionUID = 1L;

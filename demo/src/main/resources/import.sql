@@ -13,4 +13,6 @@ insert into city (name, state, country) values ('Taipei', 'TPE', 'TW');
 insert into city (name, state, country) values ('Shanghai', 'SHH', 'CN');
 insert into city (name, state, country) values ('Tokyo', 'TYO', 'JP');
 
-insert into hotel(city, name, address, zip) values (1, 'Conrad Treasury Place', 'William & George Streets', '4001')
+insert into hotel (city, name, address, zip) values (1, 'Conrad Treasury Place', 'William & George Streets', '4001');
+insert into hotel (city, name, address, zip) values (2, 'Conrad Treasury Place', 'William & George Streets', '4002');
+insert into hotel (city, name, address, zip) values (3, 'Taichung City', 'Fengshi Road', '420');
