@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.HashMap;
 import java.util.Map;
 
+/* Create a resource controller */
 @RestController
 public class HelloController {
 
